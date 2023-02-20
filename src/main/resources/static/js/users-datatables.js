@@ -16,6 +16,7 @@ async function loadUsers() {
 
   let htmlList = '';
   let btn = '</td><td><a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a></td></tr>';
+
   for (let user of users) {
     let userHtml = '<tr><td>' + user.fullName + '</td><td>' + user.username + '</td><td>'
       + user.email + '</td><td>' + user.email + '</td><td>' + user.phoneNumber + '</td><td>'
@@ -23,6 +24,6 @@ async function loadUsers() {
       + btn;
     htmlList += userHtml;
   }
+
   document.querySelector('#usersTable tbody').outerHTML = htmlList;
-  console.log(users);
 }
