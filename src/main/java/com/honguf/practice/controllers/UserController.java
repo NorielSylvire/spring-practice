@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * The type User controller.
@@ -34,6 +35,12 @@ public class UserController {
         user.setDob(Date.valueOf(LocalDate.of(1986, 9, 13)));
         return user;
     }
+
+	@RequestMapping(value = "users")
+	public List<User> getUsers()
+	{
+		return List.of(new User(2), new User(183), new User(8189));
+	}
 
     /**
      * Edit user.

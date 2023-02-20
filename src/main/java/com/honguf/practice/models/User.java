@@ -11,7 +11,7 @@ public class User {
     private String password;
     private String fullName;
     private String email;
-    private String telephone;
+    private String phoneNumber;
     private Date dob;
 
     /**
@@ -27,18 +27,18 @@ public class User {
      * 		the full name
      * @param email
      * 		the email
-     * @param telephone
+     * @param phoneNumber
      * 		the telephone
      * @param dob
      * 		the date of birth
      */
-    public User(long id, String username, String password, String fullName, String email, String telephone, Date dob) {
+    public User(long id, String username, String password, String fullName, String email, String phoneNumber, Date dob) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
-        this.telephone = telephone;
+        this.phoneNumber = phoneNumber;
         this.dob = dob;
     }
 
@@ -104,18 +104,18 @@ public class User {
     }
 
     /**
-     * Gets telephone.
+     * Gets phone number.
      *
-     * @return the telephone
+     * @return the phone number
      */
-    public String getTelephone() {
-        return telephone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     /**
-     * Gets dob.
+     * Gets the date of birth.
      *
-     * @return the dob
+     * @return the date of birth
      */
     public Date getDob() {
         return dob;
@@ -172,20 +172,20 @@ public class User {
     }
 
     /**
-     * Sets telephone.
+     * Sets phone number.
      *
-     * @param telephone
-     * 		the telephone
+     * @param phoneNumber
+     * 		the phone number
      */
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     /**
-     * Sets dob.
+     * Sets the date of birth.
      *
      * @param dob
-     * 		the dob
+     * 		the date of birth
      */
     public void setDob(Date dob) {
         this.dob = dob;

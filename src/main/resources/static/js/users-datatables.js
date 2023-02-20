@@ -4,16 +4,26 @@ $(document).ready(function() {
   $('#usersTable').DataTable();
 });
 
-function loadUsers() {
-  const rawResponse = await fetch('', {
-    method: 'POST',
+async function loadUsers() {
+  const rawResponse = await fetch('users', {
+    method: 'GET',
     headers: {
       'ACCEPT': 'application/json',
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({a: 1, b: 'Textual content'})
+    }
   });
-  const content = await rawResponse.json();
+  const users = await rawResponse.json();
 
-  console.log(content);
+  let htmlList = '';
+  for (let user of users) {
+    let userHtml = '<tr><td>' + user.fullName + '</td><td>' + user.username + '</td><td>'
+      + user.email + '</td><td>' + user.email + '</td><td>' + user.phoneNumber + '</td><td>'
+      + user.dob + '</td><td>' + user.id
+      + '</td><td><a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a></td></tr>';
+    htmlList += userHtml;
+  }
+
+  document.querySelector('#usersTable tbody').outerHTML = htmlList;
+
+  console.log(users);
 }
