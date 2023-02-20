@@ -23,8 +23,6 @@ async function loadUsers() {
       + btn;
     htmlList += userHtml;
   }
-
   document.querySelector('#usersTable tbody').outerHTML = htmlList;
-
   console.log(users);
 }
