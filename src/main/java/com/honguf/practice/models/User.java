@@ -1,18 +1,45 @@
 package com.honguf.practice.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
  * The type User.
  */
 public class User {
+    @Getter
+    @Setter
     private long id;
+    @Getter
+    @Setter
     private String username;
+    @Getter
+    @Setter
     private String password;
+    @Getter
+    @Setter
     private String fullName;
+    @Getter
+    @Setter
     private String email;
+    @Getter
+    @Setter
     private String phoneNumber;
+    @Getter
+    @Setter
     private Date dob;
+
+    /*CREATE TABLE users (
+            UserID int,
+            Username varchar(255),
+    Passwrd varchar(255),
+    FullName varchar(255),
+    Email varchar(255),
+    PhoneNumber varchar(255),
+    DOB Date
+  );*/
 
     /**
      * Instantiates a new User.
@@ -56,138 +83,5 @@ public class User {
      * Instantiates a new User.
      */
     public User() {
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public long getId() {
-        return id;
-    }
-
-    /**
-     * Gets username.
-     *
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * Gets password.
-     *
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Gets full name.
-     *
-     * @return the full name
-     */
-    public String getFullName() {
-        return fullName;
-    }
-
-    /**
-     * Gets email.
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Gets phone number.
-     *
-     * @return the phone number
-     */
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    /**
-     * Gets the date of birth.
-     *
-     * @return the date of birth
-     */
-    public Date getDob() {
-        return dob;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id
-     * 		the id
-     */
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    /**
-     * Sets username.
-     *
-     * @param username
-     * 		the username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * Sets password.
-     *
-     * @param password
-     * 		the password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
-     * Sets full name.
-     *
-     * @param fullName
-     * 		the full name
-     */
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    /**
-     * Sets email.
-     *
-     * @param email
-     * 		the email
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * Sets phone number.
-     *
-     * @param phoneNumber
-     * 		the phone number
-     */
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * Sets the date of birth.
-     *
-     * @param dob
-     * 		the date of birth
-     */
-    public void setDob(Date dob) {
-        this.dob = dob;
     }
 }
