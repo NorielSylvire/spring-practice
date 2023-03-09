@@ -1,45 +1,34 @@
 package com.honguf.practice.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.Date;
 
 /**
  * The type User.
  */
+@Entity
+@Table(name = "users")
 public class User {
-    @Getter
-    @Setter
+    @Id
+    @Getter @Setter @Column(name = "id")
     private long id;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "username")
     private String username;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "password")
     private String password;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "full_name")
     private String fullName;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "email")
     private String email;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "phone_number")
     private String phoneNumber;
-    @Getter
-    @Setter
+    @Getter @Setter @Column(name = "dob")
     private Date dob;
-
-    /*CREATE TABLE users (
-            UserID int,
-            Username varchar(255),
-    Passwrd varchar(255),
-    FullName varchar(255),
-    Email varchar(255),
-    PhoneNumber varchar(255),
-    DOB Date
-  );*/
 
     /**
      * Instantiates a new User.

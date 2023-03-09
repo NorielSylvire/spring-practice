@@ -1,6 +1,8 @@
 package com.honguf.practice.controllers;
 
+import com.honguf.practice.dao.UserDAO;
 import com.honguf.practice.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,9 @@ import java.util.List;
 @RestController
 public class UserController {
 
+    @Autowired
+    private UserDAO UserDao;
+
     /**
      * Gets user.
      *
@@ -23,23 +28,16 @@ public class UserController {
      * 		the id
      * @return the user
      */
-    @RequestMapping(value = "user/{id}")
+    @RequestMapping(value = "api/user/{id}")
     public User getUser(@PathVariable long id)
     {
-        User user = new User();
-        user.setId(id);
-        user.setUsername("blackdragon" + id);
-        user.setEmail("smith.john@company.com");
-        user.setFullName("John Smith");
-        user.setPassword("dragon1234");
-        user.setDob(Date.valueOf(LocalDate.of(1986, 9, 13)));
-        return user;
+        return UserDao.getUser(id);
     }
 
-	@RequestMapping(value = "users")
+	@RequestMapping(value = "api/users")
 	public List<User> getUsers()
 	{
-		return List.of(new User(2), new User(183), new User(8189));
+		return UserDao.getUsers();
 	}
 
     /**
